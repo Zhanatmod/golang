@@ -1,26 +1,30 @@
 package main
 
-
-
 import (
-"fmt"
 	"math/big"
+	"fmt"
 )
+
+func myfactorial (x *big.Int) (temp *big.Int) {
+temp = new(big.Int)
+	if x.Cmp(big.NewInt(1)) == 0 {
+		return big.NewInt(1)
+	}
+
+		return temp.Mul(temp, myfactorial(x.Sub(x, big.NewInt(1))))
+
+}
+
 
 func main() {
 
-	var x int
-	x = 5
-	y := fact(x)
 
-	fmt.Println(y)
-}
+	x := big.NewInt(2)
 
-func fact (x int) big.Int {
-
-	if x == 1 {
-		return 1
-	}
-	return x * fact(x - 1)
-
+	//fmt.Println(x.Cmp(big.NewInt(4)))
+	//fmt.Println(x.Mul(x,big.NewInt(2)))
+	//fmt.Println(x.Sub(x,big.NewInt(1)))
+	//y := fact(x)
+	fmt.Println (myfactorial(x))
+	fmt.Println("hello world")
 }
