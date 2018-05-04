@@ -2,15 +2,19 @@ package main
 
 import "fmt"
 
-func half() (int, bool)  {
+func half(x int) (int, bool)  {
+
 	if x % 2 == 0 {
-		return ( x, true)
+		return 1, true
 	} else {
-		return x/2, false
+		return 0, false
 	}
-	
+
 }
 func main()  {
-	x := 4
-	fmt.Println(half(x))
+fmt.Println("Введите число: ")
+var input int
+fmt.Scanf("%d", &input)
+	fmt.Println(half(input))
 }
+
